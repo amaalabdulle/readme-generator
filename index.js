@@ -23,7 +23,7 @@ function writeToFile(github, title, description, contents, installation, usage, 
 
     // Test section
     const testSection = test
-        ? 'To run tests, run the following commands:\n npm test\n npm init -y \n npm i inquirer@6.5.0 --save \n'
+        ? 'To run tests, run the following commands:\n\n npm test\n npm init -y \n npm i inquirer@6.5.0 --save \n'
         : '';
 
     // Add GitHub username to README
