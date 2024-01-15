@@ -11,5 +11,5 @@
     "inquirer": "^6.5.0"
   },
   "keywords": [],
-  "description": ""
+  "description": "Creating a README.md generator using node.js."
 }

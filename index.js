@@ -5,41 +5,54 @@ const inquirer = require("inquirer");
 
 
 // function to write README file
-function writeToFile(title, description, contents, installation, usage, license, contributors, test, questions) {
+function writeToFile(github, title, description, contents, installation, usage, license, contributors, test, questions) {
+    // Installation section
+    const installationSection = installation
+        ? 'Installation steps go here.\n'
+        : 'No installation required.\n';
 
-    let installationSection = '';
-    if (installation) {
-        installationSection = 'Installation steps go here.\n';
-    } else {
-        installationSection = 'No installation required.\n';
-    }
+    // License section
 
-    let licenseSection = '';
-    if (license && license.length > 0) {
-        // Display selected licenses
-        licenseSection = `## License\n${license.join(', ')}\n`;
-    } 
-    else {
-        // Display "No license required" if no license selected
-        licenseSection = '## License\nNo license required.\n';
-    }
+    const licenseBadge = license && license.length > 0
+        ? `![License](https://img.shields.io/badge/License-${encodeURIComponent(license[0])}-brightgreen.svg)\n`
+        : '';
 
-    let testSection = '';
-    if (test) {
-        // Display test instructions if a test is required
-        testSection = '## Test\nTo run tests, run the following command:\n`npm test`\n';
-    }
+    const licenseSection = license && license.length > 0
+        ? `${license.join(', ')}\n`
+        : 'No license required.\n';
 
-    const content = `# ${title}\n\n## Description\n${description}\n\n## Contents\n${contents}`;
-    fs.appendFile('README.md', content, (err) =>
-        err ? console.error(err) : console.log('Commit logged!')
-    );
+    // Test section
+    const testSection = test
+        ? 'To run tests, run the following commands:\n npm test\n npm init -y \n npm i inquirer@6.5.0 --save \n'
+        : '';
+
+    // Add GitHub username to README
+    const githubSection = github
+        ? `Find me on GitHub: [${github}](https://github.com/${github})\n`
+        : '';
+
+    // Create content for README
+    const content = `# ${title}\n${licenseBadge}\n## Description\n${description}\n\n## Contents\n${contents}\n\n## Installation\n${installationSection}\n## Usage\n${usage}\n\n## License\n${licenseSection}\n## Contributing\n${contributors}\n\n## Test\n${testSection}\n## GitHub\n${githubSection}\n## Questions\n${questions}`;
+
+    // Write content to README.md
+    fs.writeFile('README.md', content, (err) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log('README.md file created successfully!');
+        }
+    });
 }
 
 // function to initialize program
 function init() {
     inquirer
-        .createPromptModule([
+        .prompt([
+            {
+            type: 'input',
+            message: 'What is your GitHub username?',
+            name: 'github',
+            },
             {
             type: 'input',
             message: 'What is title of your project?',
@@ -103,11 +116,11 @@ function init() {
             message: 'Are there any questions that you have?',
             name: 'questions',
             },
+            
         ])
-
         .then((responses) => {
-            const { title, description, contents, installation, usage, license, contributors, test, questions} = responses;
-            writeToFile(title, description, contents, installation, usage, license, contributors, test, questions);
+            const { github, title, description, contents, installation, usage, license, contributors, test, questions} = responses;
+            writeToFile(github, title, description, contents, installation, usage, license, contributors, test, questions);
         });
 }
 
