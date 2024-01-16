@@ -1,11 +1,13 @@
-# title
+# project example
 ![License](https://img.shields.io/badge/License-Apache%20License%202.0-brightgreen.svg)
 
 ## Description
-description
+description example
 
 ## Contents
-contents
+- [table](#table)
+- [of](#of)
+- [contents](#contents)
 
 ## Installation
 No installation required.
@@ -17,10 +19,11 @@ usage
 Apache License 2.0
 
 ## Contributing
-Amaal
+Amaal Abdulle
 
 ## Test
 To run tests, run the following commands:
+
  npm test
  npm init -y 
  npm i inquirer@6.5.0 --save 
@@ -29,4 +32,4 @@ To run tests, run the following commands:
 Find me on GitHub: [amaalabdulle](https://github.com/amaalabdulle)
 
 ## Questions
-no
+No

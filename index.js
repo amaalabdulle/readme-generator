@@ -32,7 +32,7 @@ function writeToFile(github, title, description, contents, installation, usage, 
         : '';
 
     // Create content for README
-    const content = `# ${title}\n${licenseBadge}\n## Description\n${description}\n\n## Contents\n${contents}\n\n## Installation\n${installationSection}\n## Usage\n${usage}\n\n## License\n${licenseSection}\n## Contributing\n${contributors}\n\n## Test\n${testSection}\n## GitHub\n${githubSection}\n## Questions\n${questions}`;
+    const content = `# ${title}\n${licenseBadge}\n## Description\n${description}\n\n## Contents\n${contentLinks(contents)}\n\n## Installation\n${installationSection}\n## Usage\n${usage}\n\n## License\n${licenseSection}\n## Contributing\n${contributors}\n\n## Test\n${testSection}\n## GitHub\n${githubSection}\n## Questions\n${questions}`;
 
     // Write content to README.md
     fs.writeFile('README.md', content, (err) => {
@@ -42,6 +42,19 @@ function writeToFile(github, title, description, contents, installation, usage, 
             console.log('README.md file created successfully!');
         }
     });
+}
+
+// Function for table of content links
+function contentLinks(contents) {
+    const items = contents.split(',').map(item => item.trim());
+    const links = items.map(section => `- [${section}](#${anchorLinks(section)})`);
+    
+    return links.join('\n');
+}
+
+// Function for anchor links
+function anchorLinks(item) {
+    return item.toLowerCase().replace(/\s+/g, '-');
 }
 
 // function to initialize program
