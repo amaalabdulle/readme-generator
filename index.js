@@ -14,7 +14,7 @@ function writeToFile(github, title, description, contents, installation, usage, 
     // License section
 
     const licenseBadge = license && license.length > 0
-        ? `![License](https://img.shields.io/badge/License-${encodeURIComponent(license[0])}-brightgreen.svg)\n`
+        ? `[License](https://img.shields.io/badge/License-${encodeURIComponent(license[0])}-brightgreen.svg)\n`
         : '';
 
     const licenseSection = license && license.length > 0
