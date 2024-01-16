@@ -12,9 +12,9 @@ No steps required to install project.
 
 You can view the walkthrough video which will demonstrate how to use this project in its entirety.
 
-![alt text](code/media/demonstration.mov)
+[![Watch the video](code/media/demonstration.mov)
 
-Link to deployed website: https://amaalabdulle.github.io/readme-generator/
+Link to Github Repo: https://github.com/amaalabdulle/readme-generator.git 
 
 ## Credits
 
