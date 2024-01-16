@@ -14,7 +14,7 @@ You can view the walkthrough video which will demonstrate how to use this projec
 
 https://drive.google.com/file/d/15WRmk57BtSPv2W2frfpxyKlEMwKfPzFy/view?usp=sharing
 
-Link to Github Repo: https://github.com/amaalabdulle/readme-generator.git 
+If you do not have the package.json istalled: first run 'npm init -y' and then run 'npm i inquirer@6.5.0 --save'. You will then need to write node index.js in the integrated terminal to use this project.
 
 ## Credits
 
