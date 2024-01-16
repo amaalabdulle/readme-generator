@@ -1,28 +1,25 @@
-# asdf
-[License](https://img.shields.io/badge/License-Apache%20License%202.0-brightgreen.svg)
+# readme-generator
 
 ## Description
-sdfg
 
-## Contents
-- [sdfg](#sdfg)
+In this weeks challenege, I created a readme using Node.JS so that a professional readme can be quickly made using the integrated terminal.
 
 ## Installation
-No installation required.
+
+No steps required to install project.
 
 ## Usage
-sdfgh
+
+You can view the walkthrough video which will demonstrate how to use this project in its entirety.
+
+![alt text](code/media/demonstration.mov)
+
+Link to deployed website: https://amaalabdulle.github.io/readme-generator/
+
+## Credits
+
+Collaborated with the EdX Web Development team. All Javascript code was done by myself.
 
 ## License
-Apache License 2.0
 
-## Contributing
-asdfgh
-
-## Test
-
-## GitHub
-Find me on GitHub: [asdf](https://github.com/asdf)
-
-## Questions
-dfgh
+N/A
